@@ -1,0 +1,29 @@
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			xo_icon_text {
+				iconIdentifier = content-textpic
+				title = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title
+				description = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.description
+				tt_content_defValues {
+					CType = xo_icon_text
+				}
+			}
+		}
+
+		show := addToList(xo_icon_text)
+	}
+}
+
+[field('CType') === 'xo_icon_text']
+	TCAdefaults.tt_content {
+		space_before_class = small
+	}
+
+	TCEFORM.tt_content {
+		tx_xo_variant {
+			altLabels.0 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.0
+			addItems.1 = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.variant.1
+		}
+	}
+[END]
