@@ -4,7 +4,7 @@
 // Icon Text Module von TT-Content
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
-		'LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_xo_icon_text.title',
+		'LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.title',
 		'ce_icon_text',
 		'content-textpic'
 	),
@@ -14,7 +14,7 @@
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
 	'*',
-	'FILE:EXT:ce_icon_text/Configuration/FlexForms/ContentElements/IconText.xml',
+	'FILE:EXT:ce_icon_text/Configuration/FlexForms/IconText.xml',
 	'ce_icon_text'
 );
 
@@ -42,13 +42,13 @@ $GLOBALS['TCA']['tt_content']['types']['ce_icon_text']['columnsOverrides']['tx_x
 		'record_type' => [
 			'config' => [
 				'items' => [
-					['LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.icon_text_default', 'icon_text_default'],
+					['LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.record_type.default', 'icon_text_default'],
 				],
 				'default' => 'icon_text_default'
 			]
 		],
 		'media' => [
-			'label' => 'LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.type.icon_text.media'
+			'label' => 'LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_xo_domain_model_elements.media'
 		],
 		'description' => [
 			'config' => [

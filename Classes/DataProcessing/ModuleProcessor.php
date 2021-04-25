@@ -7,12 +7,12 @@
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Ps\Xo\DataProcessing;
+namespace Ps14\CeIconText\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class IconTextProcessor implements DataProcessorInterface {
+class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements DataProcessorInterface {
 
 	/**
 	 * @param ContentObjectRenderer $cObj The data of the content element or page

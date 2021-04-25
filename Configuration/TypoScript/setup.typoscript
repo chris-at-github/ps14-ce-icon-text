@@ -1,6 +1,6 @@
 tt_content {
-	xo_icon_text =< lib.contentElement
-	xo_icon_text {
+	ce_icon_text =< lib.contentElement
+	ce_icon_text {
 		templateName = IconText.html
 		dataProcessing {
 			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
@@ -30,7 +30,7 @@ tt_content {
 			  as = flexform
 			}
 
-			120 = Ps\Xo\DataProcessing\IconTextProcessor
+			120 = Ps14\CeIconText\DataProcessing\ModuleProcessor
 		}
 	}
 }
