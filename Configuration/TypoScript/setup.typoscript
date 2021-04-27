@@ -2,6 +2,18 @@ tt_content {
 	ce_icon_text =< lib.contentElement
 	ce_icon_text {
 		templateName = IconText.html
+		layoutRootPaths {
+			50 = EXT:ce_icon_text/Resources/Private/Layouts/
+		}
+
+		templateRootPaths {
+			50 = EXT:ce_icon_text/Resources/Private/Templates/
+		}
+
+		partialRootPaths {
+			50 = EXT:ce_icon_text/Resources/Private/Partials/
+		}
+
 		dataProcessing {
 			30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
 			30 {
