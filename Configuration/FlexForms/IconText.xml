@@ -10,9 +10,28 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.align type="array">
+					<settings.align.items type="array">
 						<TCEforms>
-							<label>LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</label>
+							<label>LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.align.items</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</numIndex>
+										<numIndex index="1">vertical</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</numIndex>
+										<numIndex index="1">horizontal</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.align.items>
+					<settings.align.inner type="array">
+						<TCEforms>
+							<label>LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.align.inner</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -32,7 +51,7 @@
 								</items>
 							</config>
 						</TCEforms>
-					</settings.align>
+					</settings.align.inner>
 				</el>
 			</ROOT>
 		</main>

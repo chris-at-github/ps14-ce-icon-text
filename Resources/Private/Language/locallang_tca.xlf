@@ -16,6 +16,13 @@
 			<trans-unit id="tx_xo_domain_model_elements.media">
 				<source>Icon</source>
 			</trans-unit>
+
+			<trans-unit id="tx_ce_icon_text.settings.align.inner">
+				<source>Alignment icons and text</source>
+			</trans-unit>
+			<trans-unit id="tx_ce_icon_text.settings.align.items">
+				<source>Alignment items</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
