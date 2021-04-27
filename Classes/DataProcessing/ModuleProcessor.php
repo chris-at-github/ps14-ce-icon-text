@@ -15,6 +15,13 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements DataProcessorInterface {
 
 	/**
+	 * @var string[]
+	 */
+	protected $importCssFiles = [
+		'/assets/css/modules/icon-text.css'
+	];
+
+	/**
 	 * @param ContentObjectRenderer $cObj The data of the content element or page
 	 * @param array $contentObjectConfiguration The configuration of Content Object
 	 * @param array $processorConfiguration The configuration of this processor
