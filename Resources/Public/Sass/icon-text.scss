@@ -67,11 +67,11 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Icon Text Modul
 .ce-icon-text {
-	.ce-header + %ce-header-sibling, .ce-header + .icon-text--container, %ce-header-sibling + .icon-text--container {
+	.ce-header + %header-sibling {
 		margin-top: $spacing-default;
 	}
 
-	.icon-text + .icon-text {
+	.icon-text {
 		margin: $spacing-default 0 0 0;
 	}
 }
@@ -88,16 +88,39 @@
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Horizontale Darstellung
-.ce-icon-text.ce-icon-text--horizontal {
-	@include icon-text--variant-1;
+.ce-icon-text--horizontal {
+	.icon-text {
+		display: flex;
+	}
+
+	.icon-text--icon-container {
+		width: rem(105px);
+		min-width: rem(105px);
+	}
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
-// >= 576px
-@include media-breakpoint-up(sm) {
+// >= 768px
+@include media-breakpoint-up(md) {
 	.ce-icon-text {
-		.icon-text + .icon-text {
-			margin-top: 0;
+		.icon-text {
+			margin-top: rem(30px);
+		}
+	}
+
+	.ce-icon-text--horizontal {
+		.icon-text--content {
+			padding: rem(0 20px 0 0);
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// >= 992px
+@include media-breakpoint-up(lg) {
+	.ce-icon-text--horizontal {
+		.icon-text--content {
+			padding: rem(0 30px 0 0);
 		}
 	}
 }
