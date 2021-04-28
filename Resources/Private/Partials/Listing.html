@@ -4,7 +4,7 @@
 			<f:format.html>{data.bodytext}</f:format.html>
 		</f:if>
 
-		<div class="row icon-text--container">
+		<div class="icon-text--container">
 			<f:for each="{elements}" as="element">
 
 				<f:variable name="iconCssClass">
@@ -13,24 +13,14 @@
 					</f:if>
 				</f:variable>
 
-				<f:variable name="itemColumnCssClass">
-					<f:if condition="{flexform.settings.align.items} == 'vertical'">
-						col-12 col-sm-6 col-md-4
-					</f:if>
-
-					<f:if condition="{flexform.settings.align.items} == 'horizontal'">
-						col-12 col-md-6
-					</f:if>
-				</f:variable>
-
 				<f:if condition="{element.data.link}">
 					<f:then>
-						<div data-uri-target="{f:uri.typolink(parameter: element.data.link)}" class="icon-text {iconCssClass -> xo:format.trim()} {itemColumnCssClass -> xo:format.trim()}">
+						<div data-uri-target="{f:uri.typolink(parameter: element.data.link)}" class="icon-text {iconCssClass -> xo:format.trim()}">
 							<f:render partial="Item" section="Main" arguments="{_all}" />
 						</div>
 					</f:then>
 					<f:else>
-						<div class="icon-text {iconCssClass -> xo:format.trim()} {itemColumnCssClass -> xo:format.trim()}">
+						<div class="icon-text {iconCssClass -> xo:format.trim()}">
 							<f:render partial="Item" section="Main" arguments="{_all}" />
 						</div>
 					</f:else>
