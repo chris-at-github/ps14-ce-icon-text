@@ -116,6 +116,17 @@ $ce-icon-text--layout-inline: true !default;
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------
+	// Inline Darstellung
+	@if($ce-icon-text--layout-inline) {
+		.ce-icon-text--inline {
+			.icon-text {
+				width: auto;
+				max-width: rem(275px);
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
 	// >= 576px
 	@include media-breakpoint-up(sm) {
 		@if($ce-icon-text--layout-vertical) {
