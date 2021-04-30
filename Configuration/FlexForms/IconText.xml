@@ -10,25 +10,20 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.align.items type="array">
+					<settings.layout type="array">
 						<TCEforms>
-							<label>LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.align.items</label>
+							<label>LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.layout</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<items>
-									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical</numIndex>
-										<numIndex index="1">vertical</numIndex>
-									</numIndex>
-									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal</numIndex>
-										<numIndex index="1">horizontal</numIndex>
-									</numIndex>
-								</items>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.ce_icon_text.layouts</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
 							</config>
 						</TCEforms>
-					</settings.align.items>
+					</settings.layout>
 					<settings.align.inner type="array">
 						<TCEforms>
 							<label>LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.align.inner</label>

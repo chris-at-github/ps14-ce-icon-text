@@ -46,3 +46,15 @@ tt_content {
 		}
 	}
 }
+
+plugin.tx_xo.settings.modules {
+	ce_icon_text {
+		layouts {
+			vertical = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.vertical
+			horizontal = LLL:EXT:xo/Resources/Private/Language/locallang_tca.xlf:tx_xo_align.horizontal
+			inline = LLL:EXT:ce_icon_text/Resources/Private/Language/locallang_tca.xlf:tx_ce_icon_text.settings.layout.inline
+		}
+	}
+}
+
+module.tx_xo.settings.modules.ce_icon_text < plugin.tx_xo.settings.modules.ce_icon_text
