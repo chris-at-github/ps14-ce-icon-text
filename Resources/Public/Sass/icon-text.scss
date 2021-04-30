@@ -6,157 +6,178 @@
 @import '../../../../xna/Resources/Public/Sass/definitions';
 
 // ---------------------------------------------------------------------------------------------------------------------
-// Icon Text Component
-.icon-text {
-	.icon-text--icon-container {
-		& {
-			position: relative;
+// Variablen
+$ce-icon-text--use-css: true !default;
+$ce-icon-text--layout-vertical: true !default;
+$ce-icon-text--layout-horizontal: true !default;
+$ce-icon-text--layout-inline: true !default;
+
+@if($ce-icon-text--use-css) {
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Icon Text Component
+	.icon-text {
+		.icon-text--icon-container {
+			& {
+				position: relative;
+				width: rem(64px);
+				height: rem(64px);
+			}
+
+			& + .icon-text--title {
+				margin: rem(20px 0 0 0);
+			}
+		}
+
+		.icon-text--icon {
+			display: inline-block;
 			width: rem(64px);
 			height: rem(64px);
+			fill: $font-color-base;
 		}
 
-		& + .icon-text--title {
-			margin: rem(20px 0 0 0);
+		.icon-text--title {
+			&, a, h1, h2, h3, h4, h5, h6 {
+				margin: rem(3px 0 0 0);
+				line-height: 1.4;
+				font-size: rem(20px);
+				font-weight: $font-weight-bold;
+				color: $font-color-base;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+			}
+		}
+
+		.icon-text--body {
+			& {
+				margin: rem(5px 0 0 0);
+			}
+
+			p, ul {
+				margin: rem(5px 0 0 0);
+			}
+		}
+
+		&[data-target]:hover {
+			&, a, h1, h2, h3, h4, h5, h6 {
+				cursor: pointer;
+				color: $link-color-hover;
+				text-decoration: none;
+			}
+
+			svg {
+				fill: $link-color-hover;
+			}
 		}
 	}
 
-	.icon-text--icon {
-		display: inline-block;
-		width: rem(64px);
-		height: rem(64px);
-		fill: $font-color-base;
-	}
-
-	.icon-text--title {
-		&, a, h1, h2, h3, h4, h5, h6 {
-			margin: rem(3px 0 0 0);
-			line-height: 1.4;
-			font-size: rem(20px);
-			font-weight: $font-weight-bold;
-			color: $font-color-base;
-		}
-
-		h1, h2, h3, h4, h5, h6 {
-			margin: 0;
-		}
-	}
-
-	.icon-text--body {
-		& {
-			margin: rem(5px 0 0 0);
-		}
-
-		p, ul {
-			margin: rem(5px 0 0 0);
-		}
-	}
-
-	&[data-target]:hover {
-		&, a, h1, h2, h3, h4, h5, h6 {
-			cursor: pointer;
-			color: $link-color-hover;
-			text-decoration: none;
-		}
-
-		svg {
-			fill: $link-color-hover;
-		}
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Icon Text Modul
-.ce-icon-text {
-	.ce-header + %header-sibling {
-		margin-top: $spacing-default;
-	}
-
-	.icon-text--container {
-		@include make-row();
-	}
-
-	.icon-text {
-		@include make-col-ready();
-		margin: $spacing-default 0 0 0;
-	}
-}
-
-.ce-icon-text--center {
-	.icon-text {
-		text-align: center;
-	}
-
-	.icon-text--icon-container {
-		margin: 0 auto;
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Horizontale Darstellung
-.ce-icon-text--horizontal {
-	.icon-text {
-		display: flex;
-	}
-
-	.icon-text--icon-container {
-		width: rem(105px);
-		min-width: rem(105px);
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// >= 576px
-@include media-breakpoint-up(sm) {
-	.ce-icon-text--vertical {
-		.icon-text {
-			@include make-col(6);
-		}
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// >= 768px
-@include media-breakpoint-up(md) {
+	// -------------------------------------------------------------------------------------------------------------------
+	// Icon Text Modul
 	.ce-icon-text {
+		.ce-header + %header-sibling {
+			margin-top: $spacing-default;
+		}
+
+		.icon-text--container {
+			@include make-row();
+		}
+
 		.icon-text {
-			margin-top: rem(30px);
+			@include make-col-ready();
+			margin: $spacing-default 0 0 0;
 		}
 	}
 
-	.ce-icon-text--vertical {
+	.ce-icon-text--center {
 		.icon-text {
-			@include make-col(4);
+			text-align: center;
+		}
+
+		.icon-text--icon-container {
+			margin: 0 auto;
 		}
 	}
 
-	.ce-icon-text--horizontal {
+	// -------------------------------------------------------------------------------------------------------------------
+	// Horizontale Darstellung
+	@if($ce-icon-text--layout-horizontal) {
+		.ce-icon-text--horizontal {
+			.icon-text {
+				display: flex;
+			}
+
+			.icon-text--icon-container {
+				width: rem(105px);
+				min-width: rem(105px);
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 576px
+	@include media-breakpoint-up(sm) {
+		@if($ce-icon-text--layout-vertical) {
+			.ce-icon-text--vertical {
+				.icon-text {
+					@include make-col(6);
+				}
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 768px
+	@include media-breakpoint-up(md) {
+		.ce-icon-text {
+			.icon-text {
+				margin-top: rem(30px);
+			}
+		}
+
+		@if($ce-icon-text--layout-vertical) {
+			.ce-icon-text--vertical {
+				.icon-text {
+					@include make-col(4);
+				}
+			}
+		}
+
+		@if($ce-icon-text--layout-horizontal) {
+			.ce-icon-text--horizontal {
+				.icon-text {
+					@include make-col(6);
+				}
+
+				.icon-text--content {
+					padding: rem(0 20px 0 0);
+				}
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// >= 992px
+	@include media-breakpoint-up(lg) {
+		@if($ce-icon-text--layout-horizontal) {
+			.ce-icon-text--horizontal {
+				.icon-text--content {
+					padding: rem(0 30px 0 0);
+				}
+			}
+		}
+
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// IE10 / 11
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 		.icon-text {
-			@include make-col(6);
-		}
-
-		.icon-text--content {
-			padding: rem(0 20px 0 0);
-		}
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// >= 992px
-@include media-breakpoint-up(lg) {
-	.ce-icon-text--horizontal {
-		.icon-text--content {
-			padding: rem(0 30px 0 0);
-		}
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// IE10 / 11
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.icon-text {
-		.icon-text--icon svg {
-			width: rem(64px);
-			height: rem(64px);
+			.icon-text--icon svg {
+				width: rem(64px);
+				height: rem(64px);
+			}
 		}
 	}
 }
