@@ -24,7 +24,8 @@ class ModuleProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements D
 	public function process(ContentObjectRenderer $contentObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
 
 		if(isset($processedData['flexform']) === true && isset($processedData['data']['frame_classes']) === true) {
-			$processedData['data']['frame_classes'] .= ' ce-gallery--' . $processedData['flexform']['settings']['layout'];
+			$processedData['data']['frame_classes'] .= ' ce-icon-text--' . $processedData['flexform']['settings']['layout'];
+			$processedData['data']['frame_classes'] .= ' ce-icon-text--' . $processedData['flexform']['settings']['align']['inner'];
 		}
 
 		return $processedData;
