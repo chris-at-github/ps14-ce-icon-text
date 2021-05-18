@@ -3,15 +3,15 @@ tt_content {
 	ce_icon_text {
 		templateName = IconText.html
 		layoutRootPaths {
-			50 = EXT:ce_icon_text/Resources/Private/Layouts/
+			10 = EXT:ce_icon_text/Resources/Private/Layouts/
 		}
 
 		templateRootPaths {
-			50 = EXT:ce_icon_text/Resources/Private/Templates/
+			10 = EXT:ce_icon_text/Resources/Private/Templates/
 		}
 
 		partialRootPaths {
-			50 = EXT:ce_icon_text/Resources/Private/Partials/
+			10 = EXT:ce_icon_text/Resources/Private/Partials/
 		}
 
 		dataProcessing {
