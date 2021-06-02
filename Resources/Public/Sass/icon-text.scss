@@ -30,7 +30,7 @@ $ce-icon-text--layout-inline: true !default;
 		}
 
 		.icon-text--icon {
-			display: inline-block;
+			display: flex;
 			width: rem(64px);
 			height: rem(64px);
 			fill: $font-color-base;
@@ -98,6 +98,10 @@ $ce-icon-text--layout-inline: true !default;
 		.icon-text--icon-container {
 			margin: 0 auto;
 		}
+
+		.icon-text--icon {
+			justify-content: center;
+		}
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------
@@ -122,6 +126,20 @@ $ce-icon-text--layout-inline: true !default;
 			.icon-text {
 				width: auto;
 				max-width: rem(275px);
+			}
+
+			.icon-text--icon {
+				align-items: flex-end;
+			}
+		}
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Vertikale Darstellung
+	@if($ce-icon-text--layout-vertical) {
+		.ce-icon-text--inline {
+			.icon-text--icon {
+				align-items: flex-end;
 			}
 		}
 	}
