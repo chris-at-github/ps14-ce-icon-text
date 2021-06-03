@@ -60,7 +60,7 @@ $ce-icon-text--layout-inline: true !default;
 			}
 		}
 
-		&[data-target]:hover {
+		&[data-uri-target]:hover {
 			&, a, h1, h2, h3, h4, h5, h6 {
 				cursor: pointer;
 				color: $link-color-hover;
