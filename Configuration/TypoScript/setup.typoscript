@@ -4,14 +4,17 @@ tt_content {
 		templateName = IconText.html
 		layoutRootPaths {
 			10 = EXT:ce_icon_text/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/CeIconText/Layouts/
 		}
 
 		templateRootPaths {
 			10 = EXT:ce_icon_text/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/CeIconText/Templates/
 		}
 
 		partialRootPaths {
 			10 = EXT:ce_icon_text/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/CeIconText/Partials/
 		}
 
 		dataProcessing {
